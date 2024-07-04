@@ -7,7 +7,7 @@ one day one ps
 | 2024/07/01 | [동전0](https://www.acmicpc.net/problem/11047)    | 
 | 2024/07/02 | [이항계수1](https://www.acmicpc.net/problem/11050)  | 
 | 2024/07/03 | [수식 고치기](https://www.acmicpc.net/problem/31835) | 
-| 테스트1       | 테스트2                                            | 
+| 2024/07/04 | [풍선공장](https://www.acmicpc.net/problem/15810)   | 
 | 테스트1       | 테스트2                                            | 
 | 테스트1       | 테스트2                                            | 
 | 테스트1       | 테스트2                                            | 
