@@ -1,57 +1,36 @@
 #include <iostream>
-#include <algorithm>
-#include <string>
+#include <vector>
 
 using namespace std;
 
 int main() {
-    string first, second;
+    ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-    cin >> first;
-    cin >> second;
+    int k;
+    cin >> k;
+    int max_num = k * 20;
+    std::vector<bool> is_prime(max_num + 1, true);
 
-    first.insert(0, " ");
-    second.insert(0, " ");
-
-    int dp[first.size()][second.size()];
-
-    for (int i = 0; i < first.size(); ++i) {
-        for (int j = 0; j < second.size(); ++j) {
-            dp[i][j] = 0;
-        }
-    }
-
-    for (int i = 1; i < first.size(); i++) {
-        for (int j = 1; j < second.size(); j++) {
-            if (first[i] == second[j]) {
-                dp[i][j] = dp[i - 1][j - 1] + 1;
-            } else {
-                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+    is_prime[0] = is_prime[1] = false;
+    for (int i = 2; i * i <= max_num; i++) {
+        if (is_prime[i]) {
+            for (int j = i * i; j <= max_num; j += i) {
+                is_prime[j] = false;
             }
         }
     }
 
-    cout << dp[first.size() - 1][second.size() - 1] << endl;
-
-    int i = first.size() - 1;
-    int j = second.size() - 1;
-
-    string result = "";
-
-//    cout << i << " " << j << endl;
-//    cout << dp[i][j] << endl;
-
-    while (dp[i][j] != 0) {
-        if (dp[i][j] != dp[i - 1][j] && dp[i][j] != dp[i][j - 1]) {
-            result.insert(0, 1, first[i]);
-            i--;
-            j--;
-        } else if (dp[i][j] == dp[i - 1][j]) {
-            i--;
-        } else if (dp[i][j] == dp[i][j - 1]) {
-            j--;
+    int count = 0;
+    for (int i = 2; i <= max_num; i++) {
+        if (is_prime[i]) {
+            count++;
+            if (count == k) {
+                std::cout << i << std::endl;
+                break;
+            }
         }
     }
 
-    cout << result << endl;
+    return 0;
 }
