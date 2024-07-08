@@ -1,36 +1,57 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    string first, second;
 
-    int n, k;
-    cin >> n >> k;
+    cin >> first;
+    cin >> second;
 
-    vector<vector<int>> v;
+    first.insert(0, " ");
+    second.insert(0, " ");
 
-    for (int i = 0; i < n + 1; i++) {
-        vector<int> temp;
-        temp.push_back(1);
-        for (int j = 1; j <= i; j++) {
-            temp.push_back((v[i - 1][j - 1] + v[i - 1][j]) % 10007);
+    int dp[first.size()][second.size()];
+
+    for (int i = 0; i < first.size(); ++i) {
+        for (int j = 0; j < second.size(); ++j) {
+            dp[i][j] = 0;
         }
-        temp.push_back(0);
-        v.push_back(temp);
     }
 
-//    for (auto i: v) {
-//        for (auto j: i) {
-//            cout << j << " ";
-//        }
-//        cout << endl;
-//    }
+    for (int i = 1; i < first.size(); i++) {
+        for (int j = 1; j < second.size(); j++) {
+            if (first[i] == second[j]) {
+                dp[i][j] = dp[i - 1][j - 1] + 1;
+            } else {
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+            }
+        }
+    }
 
-    cout << v[n][k] % 10007 << endl;
+    cout << dp[first.size() - 1][second.size() - 1] << endl;
 
-    return 0;
+    int i = first.size() - 1;
+    int j = second.size() - 1;
+
+    string result = "";
+
+//    cout << i << " " << j << endl;
+//    cout << dp[i][j] << endl;
+
+    while (dp[i][j] != 0) {
+        if (dp[i][j] != dp[i - 1][j] && dp[i][j] != dp[i][j - 1]) {
+            result.insert(0, 1, first[i]);
+            i--;
+            j--;
+        } else if (dp[i][j] == dp[i - 1][j]) {
+            i--;
+        } else if (dp[i][j] == dp[i][j - 1]) {
+            j--;
+        }
+    }
+
+    cout << result << endl;
 }

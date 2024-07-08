@@ -10,8 +10,8 @@ one day one ps
 | 2024/07/04 | [풍선공장](https://www.acmicpc.net/problem/15810)                                    | 
 | 2024/07/05 | [The Shortest does not Mean the Simplest](https://www.acmicpc.net/problem/11819) | 
 | 2024/07/06 | 강릉여행~~                                                                           | 
-| 2024/07/07 | [이항계수2](https://www.acmicpc.net/problem/11051),                                  | 
-| 테스트1       | 테스트2                                                                             | 
+| 2024/07/07 | [이항계수2](https://www.acmicpc.net/problem/11051)                                   | 
+| 2024/07/08 | [LCS 2](https://www.acmicpc.net/problem/9252)                                    | 
 | 테스트1       | 테스트2                                                                             | 
 | 테스트1       | 테스트2                                                                             | 
 | 테스트1       | 테스트2                                                                             | 
