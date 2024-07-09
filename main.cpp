@@ -1,36 +1,52 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
+#define MAX_VALUE 5000001
+
+int Prime[MAX_VALUE];
+
+void erathostenes() {
+    Prime[0] = Prime[1] = -1;
+
+    for (int i = 2; i < MAX_VALUE; i++) {
+        Prime[i] = i;
+    }
+    int sqrtn = int(sqrt(MAX_VALUE));
+
+    for (int i = 2; i <= sqrtn; i++) {
+        for (int j = i * i; j < MAX_VALUE; j += i) {
+            if (Prime[j] == j) {
+                Prime[j] = i;
+            }
+        }
+    }
+}
+
+void factor(int num) {
+
+    while (num > 1) {
+        cout << Prime[num] << ' ';
+        num /= Prime[num];
+    }
+
+    cout << '\n';
+}
 
 int main() {
     ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
+    cin.tie(nullptr);
 
-    int k;
-    cin >> k;
-    int max_num = k * 20;
-    std::vector<bool> is_prime(max_num + 1, true);
+    int t;
+    cin >> t;
 
-    is_prime[0] = is_prime[1] = false;
-    for (int i = 2; i * i <= max_num; i++) {
-        if (is_prime[i]) {
-            for (int j = i * i; j <= max_num; j += i) {
-                is_prime[j] = false;
-            }
-        }
+    erathostenes();
+
+    for (int T = 0; T < t; T++) {
+        int num;
+        cin >> num;
+        factor(num);
     }
 
-    int count = 0;
-    for (int i = 2; i <= max_num; i++) {
-        if (is_prime[i]) {
-            count++;
-            if (count == k) {
-                std::cout << i << std::endl;
-                break;
-            }
-        }
-    }
 
     return 0;
 }

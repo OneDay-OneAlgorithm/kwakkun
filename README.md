@@ -12,7 +12,7 @@ one day one ps
 | 2024/07/06 | 강릉여행~~                                                                                        | 
 | 2024/07/07 | [이항계수2](https://www.acmicpc.net/problem/11051)                                                | 
 | 2024/07/08 | [LCS 2](https://www.acmicpc.net/problem/9252),[k번째 소수](https://www.acmicpc.net/problem/15965) | 
-| 테스트1       | 테스트2                                                                                          | 
+| 2024/07/09 | [어려운소인수분해](https://www.acmicpc.net/problem/16563)                                             | 
 | 테스트1       | 테스트2                                                                                          | 
 | 테스트1       | 테스트2                                                                                          | 
 | 테스트1       | 테스트2                                                                                          | 
