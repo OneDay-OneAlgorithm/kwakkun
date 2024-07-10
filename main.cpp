@@ -1,28 +1,20 @@
 #include <bits/stdc++.h>
+#include <cmath>
 
 #define ll long long
 using namespace std;
 
-ll gcd(ll a, ll b) {
-    return b ? gcd(b, a % b) : a;
-}
-
-ll lcm(ll a, ll b) {
-    return a * b / gcd(a, b);
-}
-
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    ll n, q;
+    cin >> n;
 
-    ll a;
-    cin >> a;
-    ll ans = 1;
-    for (int i = 0; i < a - 2; i++) {
-        ll b;
-        cin >> b;
-        ans = lcm(ans, b);
+    q = sqrt(n);
+
+    if ((q * q) < n) {
+        q++;
     }
-    cout << ans;
+
+    cout << q << endl;
+
     return 0;
 }
