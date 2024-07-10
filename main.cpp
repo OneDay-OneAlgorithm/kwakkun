@@ -1,52 +1,33 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-#define MAX_VALUE 5000001
 
-int Prime[MAX_VALUE];
-
-void erathostenes() {
-    Prime[0] = Prime[1] = -1;
-
-    for (int i = 2; i < MAX_VALUE; i++) {
-        Prime[i] = i;
+int gcd(int a, int b) {
+    while (b) {
+        int r = a % b;
+        a = b;
+        b = r;
     }
-    int sqrtn = int(sqrt(MAX_VALUE));
-
-    for (int i = 2; i <= sqrtn; i++) {
-        for (int j = i * i; j < MAX_VALUE; j += i) {
-            if (Prime[j] == j) {
-                Prime[j] = i;
-            }
-        }
-    }
+    return a;
 }
 
-void factor(int num) {
-
-    while (num > 1) {
-        cout << Prime[num] << ' ';
-        num /= Prime[num];
-    }
-
-    cout << '\n';
+int lcm(int a, int b) {
+    return a * b / gcd(a, b);
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    int t;
-    cin >> t;
-
-    erathostenes();
-
-    for (int T = 0; T < t; T++) {
-        int num;
-        cin >> num;
-        factor(num);
+    int a, b;
+    cin >> a >> b;
+    int max_v, min_v;
+    if (a > b) {
+        max_v = a;
+        min_v = b;
+    } else {
+        max_v = b;
+        min_v = a;
     }
+    int gcd_v = gcd(max_v, min_v);
+    int lcm_v = lcm(max_v, min_v);
 
-
-    return 0;
+    cout << gcd_v << '\n' << lcm_v << '\n';
 }
