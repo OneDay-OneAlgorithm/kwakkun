@@ -17,6 +17,7 @@
 | 2024/07/10 | [최대공약수와 최소공배수](https://www.acmicpc.net/problem/2609)                             | 
 |            | [행성정렬](https://www.acmicpc.net/problem/25344)                                    |
 |            | [정수제곱근](https://www.acmicpc.net/problem/2417)                                    |
-|            | [쉬운최단거리](https://www.acmicpc.net/problem/14940)                                                                       |
+|            | [쉬운최단거리](https://www.acmicpc.net/problem/14940)                                  |
+|            | [덱](https://www.acmicpc.net/problem/10866)                                                                            |
 | 테스트1       | 테스트2                                                                             | 
 | 테스트1       | 테스트2                                                                             | 
