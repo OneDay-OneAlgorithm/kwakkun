@@ -1,33 +1,28 @@
 #include <bits/stdc++.h>
 
+#define ll long long
 using namespace std;
 
-int gcd(int a, int b) {
-    while (b) {
-        int r = a % b;
-        a = b;
-        b = r;
-    }
-    return a;
+ll gcd(ll a, ll b) {
+    return b ? gcd(b, a % b) : a;
 }
 
-int lcm(int a, int b) {
+ll lcm(ll a, ll b) {
     return a * b / gcd(a, b);
 }
 
 int main() {
-    int a, b;
-    cin >> a >> b;
-    int max_v, min_v;
-    if (a > b) {
-        max_v = a;
-        min_v = b;
-    } else {
-        max_v = b;
-        min_v = a;
-    }
-    int gcd_v = gcd(max_v, min_v);
-    int lcm_v = lcm(max_v, min_v);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    cout << gcd_v << '\n' << lcm_v << '\n';
+    ll a;
+    cin >> a;
+    ll ans = 1;
+    for (int i = 0; i < a - 2; i++) {
+        ll b;
+        cin >> b;
+        ans = lcm(ans, b);
+    }
+    cout << ans;
+    return 0;
 }
