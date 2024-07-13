@@ -20,4 +20,4 @@
 |            | [쉬운최단거리](https://www.acmicpc.net/problem/14940)                                  |
 |            | [덱](https://www.acmicpc.net/problem/10866)                                       |
 | 2024/07/11 | [L. Locust Locus](https://codeforces.com/gym/104670/problem/L)                   | 
-| 테스트1       | 테스트2                                                                             | 
+| 2024/07/12 | 유어슈 MT                                                                           | 
