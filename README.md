@@ -21,3 +21,10 @@
 |            | [덱](https://www.acmicpc.net/problem/10866)                                       |
 | 2024/07/11 | [L. Locust Locus](https://codeforces.com/gym/104670/problem/L)                   | 
 | 2024/07/12 | 유어슈 MT                                                                           | 
+| 2024/07/13 | 유어슈 MT                                                                           | 
+| 2024/07/14 | [최소공배수](https://www.acmicpc.net/problem/1934)                                    | 
+| 2024/07/12 | 유어슈 MT                                                                           | 
+| 2024/07/12 | 유어슈 MT                                                                           | 
+| 2024/07/12 | 유어슈 MT                                                                           | 
+| 2024/07/12 | 유어슈 MT                                                                           | 
+| 2024/07/12 | 유어슈 MT                                                                           | 
