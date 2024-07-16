@@ -23,8 +23,8 @@
 | 2024/07/12 | 유어슈 MT                                                                           | 
 | 2024/07/13 | 유어슈 MT                                                                           | 
 | 2024/07/14 | [최소공배수](https://www.acmicpc.net/problem/1934)                                    | 
-| 2024/07/15 | [구간합구하기](https://www.acmicpc.net/problem/2042)                                                                       | 
-| 2024/07/12 | 유어슈 MT                                                                           | 
+| 2024/07/15 | [구간합구하기](https://www.acmicpc.net/problem/2042)                                   | 
+| 2024/07/16 | [최솟값과 최댓값](https://www.acmicpc.net/problem/2357)                                 | 
 | 2024/07/12 | 유어슈 MT                                                                           | 
 | 2024/07/12 | 유어슈 MT                                                                           | 
 | 2024/07/12 | 유어슈 MT                                                                           | 
