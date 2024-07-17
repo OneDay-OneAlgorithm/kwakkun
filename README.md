@@ -25,7 +25,7 @@
 | 2024/07/14 | [최소공배수](https://www.acmicpc.net/problem/1934)                                    | 
 | 2024/07/15 | [구간합구하기](https://www.acmicpc.net/problem/2042)                                   | 
 | 2024/07/16 | [최솟값과 최댓값](https://www.acmicpc.net/problem/2357)                                 | 
-|            | [최솟값](https://www.acmicpc.net/problem/10868)                                                                          |
-| 2024/07/12 | 유어슈 MT                                                                           | 
+|            | [최솟값](https://www.acmicpc.net/problem/10868)                                     |
+| 2024/07/17 | [주사위 세개](https://www.acmicpc.net/problem/2480)                                   | 
 | 2024/07/12 | 유어슈 MT                                                                           | 
 | 2024/07/12 | 유어슈 MT                                                                           | 
