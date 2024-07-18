@@ -27,5 +27,5 @@
 | 2024/07/16 | [최솟값과 최댓값](https://www.acmicpc.net/problem/2357)                                 | 
 |            | [최솟값](https://www.acmicpc.net/problem/10868)                                     |
 | 2024/07/17 | [주사위 세개](https://www.acmicpc.net/problem/2480)                                   | 
-| 2024/07/12 | 유어슈 MT                                                                           | 
+| 2024/07/18 | [히스토그램](https://www.acmicpc.net/problem/1725)                                    | 
 | 2024/07/12 | 유어슈 MT                                                                           | 
