@@ -1,3 +1,10 @@
+---
+DONE_DATE: 2024/07/19
+---
+https://www.acmicpc.net/problem/21870
+
+
+```c++
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -51,4 +58,16 @@ int main() {
 
     cout << divide(0, N - 1) << endl;
 }
+
+
+
+```
+
+## 문제 풀이
+- 뭔가 어려워 보였는데 단순하다.
+- 배열을 두개로 나누어서 각각의 최대 GCD를 구하고 더 큰 값을 리턴하면 된다.
+- 배열을 두개로 나누는 방법은 재귀로 구현하면 된다.
+
+
+
 
