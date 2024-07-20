@@ -1,54 +1,77 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-typedef long long ll;
+#define ll long long
 
-int N;
-vector<int> arr;
+int n;
+vector<ll> v;
+vector<ll> input;
+vector<ll> tree;
 
-int gcd(int a, int b) {
-    if (b == 0) return a;
-    return gcd(b, a % b);
-}
-
-int sectionGcd(int start, int end) {
-    int result = 0;
-    for (int i = start; i <= end; i++) {
-        result = gcd(result, arr[i]);
+void init(int node = 1, int start = 0, int end = n - 1) {
+    if (start == end) {
+        tree[node] = 0;
+    } else {
+        int mid = (start + end) / 2;
+        init(node * 2, start, mid);
+        init(node * 2 + 1, mid + 1, end);
+        tree[node] = tree[node * 2] + tree[node * 2 + 1];
     }
-//    cout << "sectionGCD ::: start: " << start << " end: " << end << " result: " << result << endl;
-    return result;
 }
 
-int divide(int start, int end) {
-    if (start == end) return arr[start];
+int query(int left, int right, int node = 1, int start = 0, int end = n - 1) {
+    if (left > end || right < start) {
+        return 0;
+    }
 
-    int mid = (start + end - 1) / 2;
-//    cout << "start: " << start << " end: " << end << " mid: " << mid << endl;
+    if (left <= start && end <= right) {
+        return tree[node];
+    }
 
-    int left_side = sectionGcd(start, mid) + divide(mid + 1, end);
-    int right_side = divide(start, mid) + sectionGcd(mid + 1, end);
-
-    return max(left_side, right_side);
+    int mid = (start + end) / 2;
+    return query(left, right, node * 2, start, mid) + query(left, right, node * 2 + 1, mid + 1, end);
 }
 
+void update(int idx, int value, int node = 1, int start = 0, int end = n - 1) {
+    if (idx < start || idx > end) {
+        return;
+    }
+
+    if (start == end) {
+        tree[node] += value;
+        return;
+    }
+
+    int mid = (start + end) / 2;
+    update(idx, value, node * 2, start, mid);
+    update(idx, value, node * 2 + 1, mid + 1, end);
+    tree[node] = tree[node * 2] + tree[node * 2 + 1];
+}
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    cin >> N;
-    arr.resize(N);
-    for (int i = 0; i < N; i++) {
-        cin >> arr[i];
+    cin >> n;
+    v.resize(n);
+    input.resize(n);
+
+    for (int i = 0; i < n; i++) {
+        cin >> input[i];
     }
 
-//    for (auto i: arr) {
-//        cout << i << " ";
-//    }
-//    cout << endl;
+    int h = (int) ceil(log2(n));
+    int tree_size = (1 << (h + 1));
+    tree.resize(tree_size);
 
-    cout << divide(0, N - 1) << endl;
+    init();
+
+    ll result = 0;
+    for (int i = 0; i < n; i++) {
+        update(input[i] - 1, 1);
+        result += query(input[i], n - 1);
+    }
+
+    cout << result << endl;
+    return 0;
 }
-
