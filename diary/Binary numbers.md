@@ -1,3 +1,10 @@
+---
+DONE_DATE: 2024/07/22
+---
+https://www.acmicpc.net/problem/20360
+
+
+```c++
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -20,3 +27,9 @@ int main() {
 
     return 0;
 }
+
+```
+잠깐 쉬어가는 코너...
+
+
+

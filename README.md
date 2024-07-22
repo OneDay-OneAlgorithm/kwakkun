@@ -2,6 +2,8 @@
 
 매일매일 알고리즘 문제 1개!!!! ^ __ ^
 
+=> 목표 : 2023 SCCC 여름 초급 강의 필수 과제 완료하기
+
 | 날짜         | 문제                                                                               |
 |------------|----------------------------------------------------------------------------------|
 | 2024/07/01 | [동전0](https://www.acmicpc.net/problem/11047)                                     | 
@@ -29,9 +31,9 @@
 | 2024/07/17 | [주사위 세개](https://www.acmicpc.net/problem/2480)                                   | 
 | 2024/07/18 | [히스토그램](https://www.acmicpc.net/problem/1725)                                    | 
 | 2024/07/19 | [시철이가 사랑한 GCD](https://www.acmicpc.net/problem/21870)                            | 
-| 2024/07/20 | [최솟값찾기](https://www.acmicpc.net/problem/11003)                                   | 
-| 2024/07/19 |                                                                                  | 
-| 2024/07/19 |                                                                                  | 
+| 2024/07/20 | [Counting Inversions](https://www.acmicpc.net/problem/10090)                     | 
+| 2024/07/21 | [최솟값찾기](https://www.acmicpc.net/problem/11003)                                   | 
+| 2024/07/22 | [Binary numbers](https://www.acmicpc.net/problem/20360)                          | 
 | 2024/07/19 |                                                                                  | 
 | 2024/07/19 |                                                                                  | 
 | 2024/07/19 |                                                                                  | 
