@@ -2,44 +2,58 @@
 
 using namespace std;
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+typedef long long ll;
+typedef vector<vector<long long>> Matrix;
 
-    string str;
-    int m, x;
-
-    int s = 0;
-
-    cin >> m;
-    for (int i = 0; i < m; i++) {
-        cin >> str;
-
-        if (str == "add") {
-            cin >> x;
-            s = s | (1 << x);
-        } else if (str == "remove") {
-            cin >> x;
-            s = s & ~(1 << x);
-        } else if (str == "check") {
-            cin >> x;
-            if (s & (1 << x)) {
-                cout << "1\n";
-            } else {
-                cout << "0\n";
+Matrix multiply(const Matrix &a, const Matrix &b, int mod) {
+    int n = a.size();
+    Matrix result(n, vector<ll>(n, 0));
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            for (int k = 0; k < n; ++k) {
+                result[i][j] = (result[i][j] + a[i][k] * b[k][j]) % mod;
             }
-        } else if (str == "toggle") {
-            cin >> x;
-            if (s & (1 << x)) {
-                s = s & ~(1 << x);
-            } else {
-                s = s | (1 << x);
-            }
-        } else if (str == "all") {
-            s = (1 << 21) - 1;
-        } else if (str == "empty") {
-            s = 0;
         }
     }
-    return 0;
+    return result;
+}
+
+Matrix power(Matrix base, ll exp, int mod) {
+    int n = base.size();
+    Matrix result(n, vector<ll>(n, 0));
+    for (int i = 0; i < n; ++i) {
+        result[i][i] = 1;
+    }
+    while (exp > 0) {
+        if (exp & 1) { // exp의 마지막 비트가 1이면 => 홀수
+            result = multiply(result, base, mod);
+        }
+        base = multiply(base, base, mod);
+        exp >>= 1;
+    }
+    return result;
+}
+
+int main() {
+    int n;
+    ll b;
+    int modular = 1000;
+    vector<vector<ll>> m;
+
+    cin >> n >> b;
+    m.resize(n, vector<ll>(n));
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> m[i][j];
+        }
+    }
+
+    Matrix result = power(m, b, modular);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << result[i][j] << " ";
+        }
+        cout << endl;
+    }
 }

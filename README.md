@@ -35,7 +35,7 @@
 | 2024/07/21 | [최솟값찾기](https://www.acmicpc.net/problem/11003)                                   | 
 | 2024/07/22 | [Binary numbers](https://www.acmicpc.net/problem/20360)                          | 
 | 2024/07/23 | [집합](https://www.acmicpc.net/problem/11723)                                      | 
-| 2024/07/19 |                                                                                  | 
+| 2024/07/24 | [행렬 제곱](https://www.acmicpc.net/problem/10830)                                   | 
 | 2024/07/19 |                                                                                  | 
 | 2024/07/19 |                                                                                  | 
 | 2024/07/19 |                                                                                  | 
