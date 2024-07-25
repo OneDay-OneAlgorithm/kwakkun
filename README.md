@@ -36,7 +36,7 @@
 | 2024/07/22 | [Binary numbers](https://www.acmicpc.net/problem/20360)                          | 
 | 2024/07/23 | [집합](https://www.acmicpc.net/problem/11723)                                      | 
 | 2024/07/24 | [행렬 제곱](https://www.acmicpc.net/problem/10830)                                   | 
-| 2024/07/19 |                                                                                  | 
+| 2024/07/25 | [Lowest Latency](https://www.acmicpc.net/problem/26003)                          | 
 | 2024/07/19 |                                                                                  | 
 | 2024/07/19 |                                                                                  | 
 | 2024/07/19 |                                                                                  | 
