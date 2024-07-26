@@ -37,6 +37,6 @@
 | 2024/07/23 | [집합](https://www.acmicpc.net/problem/11723)                                      | 
 | 2024/07/24 | [행렬 제곱](https://www.acmicpc.net/problem/10830)                                   | 
 | 2024/07/25 | [Lowest Latency](https://www.acmicpc.net/problem/26003)                          | 
-| 2024/07/19 |                                                                                  | 
+| 2024/07/26 | [최단경로](https://www.acmicpc.net/problem/1753)                                     | 
 | 2024/07/19 |                                                                                  | 
 | 2024/07/19 |                                                                                  | 

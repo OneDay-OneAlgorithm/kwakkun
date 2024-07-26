@@ -2,58 +2,55 @@
 
 using namespace std;
 
-typedef long long ll;
-typedef vector<vector<long long>> Matrix;
+const int INF = 1e9;
+typedef vector<vector<pair<int, int>>> Graph;
 
-Matrix multiply(const Matrix &a, const Matrix &b, int mod) {
-    int n = a.size();
-    Matrix result(n, vector<ll>(n, 0));
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
-            for (int k = 0; k < n; ++k) {
-                result[i][j] = (result[i][j] + a[i][k] * b[k][j]) % mod;
+void dijkstra(int start, Graph &graph, vector<int> &dist) {
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+    dist[start] = 0;
+    pq.emplace(0, start);
+
+    while (!pq.empty()) {
+        int current_dist = pq.top().first;
+        int current_node = pq.top().second;
+        pq.pop();
+
+        if (current_dist > dist[current_node]) continue;
+
+        for (auto &edge: graph[current_node]) {
+            int next_node = edge.first;
+            int weight = edge.second;
+            int new_dist = current_dist + weight;
+
+            if (new_dist < dist[next_node]) {
+                dist[next_node] = new_dist;
+                pq.emplace(new_dist, next_node);
             }
         }
     }
-    return result;
-}
-
-Matrix power(Matrix base, ll exp, int mod) {
-    int n = base.size();
-    Matrix result(n, vector<ll>(n, 0));
-    for (int i = 0; i < n; ++i) {
-        result[i][i] = 1;
-    }
-    while (exp > 0) {
-        if (exp & 1) { // exp의 마지막 비트가 1이면 => 홀수
-            result = multiply(result, base, mod);
-        }
-        base = multiply(base, base, mod);
-        exp >>= 1;
-    }
-    return result;
 }
 
 int main() {
-    int n;
-    ll b;
-    int modular = 1000;
-    vector<vector<ll>> m;
+    int V, E;
+    cin >> V >> E;
+    int start_v;
+    cin >> start_v;
 
-    cin >> n >> b;
-    m.resize(n, vector<ll>(n));
+    Graph graph(V + 1);
+    vector<int> dist(V + 1, INF);
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            cin >> m[i][j];
-        }
+    for (int i = 0; i < E; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        graph[u].emplace_back(v, w);
     }
 
-    Matrix result = power(m, b, modular);
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            cout << result[i][j] << " ";
-        }
-        cout << endl;
+    dijkstra(start_v, graph, dist);
+
+    for (int i = 1; i <= V; i++) {
+        if (dist[i] == INF) cout << "INF" << '\n';
+        else cout << dist[i] << '\n';
     }
+
+    return 0;
 }
