@@ -1,58 +1,27 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-typedef vector<vector<int>> Graph;
-
-int V;
-
-void floyd(Graph &graph, Graph &dist) {
-    dist = graph;
-
-    for (int k = 1; k <= V; k++) {
-        for (int i = 1; i <= V; i++) {
-            for (int j = 1; j <= V; j++) {
-                if (dist[i][k] != INT_MAX && dist[k][j] != INT_MAX && dist[i][k] + dist[k][j] < dist[i][j]) {
-                    dist[i][j] = dist[i][k] + dist[k][j];
-                }
-            }
-        }
-    }
-}
+using ll = long long;
 
 int main() {
-    cin >> V;
-    int m;
-    cin >> m;
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
 
-    Graph graph(V + 1, vector<int>(V + 1, INT_MAX));
-    Graph dist(V + 1, vector<int>(V + 1, INT_MAX));
+    ll N, x;
+    cin >> N >> x;
 
-    // 그래프 초기화
-    for (int i = 1; i <= V; i++) {
-        graph[i][i] = 0;
+    vector<ll> A(N + 1);
+    ll sum = 0;
+
+    for (int i = 1; i <= N; ++i) {
+        cin >> A[i];
+        sum += A[i] * A[i];
     }
 
-    // 간선 입력
-    for (int i = 0; i < m; i++) {
-        int a, b, c;
-        cin >> a >> b >> c;
-        if (graph[a][b] > c) {
-            graph[a][b] = c;
-        }
-    }
+    double t = (sum == 0) ? 0 : sqrt(static_cast<double>(x) * N / sum);
 
-    // 플로이드 와샬 알고리즘 실행
-    floyd(graph, dist);
-
-    // 결과 출력
-    for (int i = 1; i <= V; i++) {
-        for (int j = 1; j <= V; j++) {
-            if (dist[i][j] == INT_MAX)
-                cout << "0 ";
-            else
-                cout << dist[i][j] << " ";
-        }
-        cout << endl;
+    for (int i = 1; i <= N; ++i) {
+        printf("%.9lf ", A[i] * t);
     }
 
     return 0;
