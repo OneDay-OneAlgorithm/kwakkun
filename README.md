@@ -41,3 +41,4 @@
 |            | [플로이드](https://www.acmicpc.net/problem/11404)                                    |
 | 2024/07/27 | [Equalising Audio](https://www.acmicpc.net/problem/25996)                        | 
 | 2024/07/28 | [파이프 옮기기](https://www.acmicpc.net/problem/17070)                                 | 
+|            | [내려가기](https://www.acmicpc.net/problem/2096)                                     |
