@@ -44,3 +44,11 @@
 |            | [내려가기](https://www.acmicpc.net/problem/2096)                                     |
 | 2024/07/29 | [본대 산책 2](https://www.acmicpc.net/problem/12850)                                 |
 |            | [본대 산책 3](https://www.acmicpc.net/problem/14289)                                 |
+| 2024/07/30 | [구두 수선공](https://www.acmicpc.net/problem/14908)                                  |
+| 2024/07/30 |                                                                                  |
+| 2024/07/30 |                                                                                  |
+| 2024/07/30 |                                                                                  |
+| 2024/07/30 |                                                                                  |
+| 2024/07/30 |                                                                                  |
+| 2024/07/30 |                                                                                  |
+| 2024/07/30 |                                                                                  |
