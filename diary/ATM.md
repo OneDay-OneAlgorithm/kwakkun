@@ -1,3 +1,9 @@
+---
+DONE_DATE: 2024/08/01
+---
+https://www.acmicpc.net/problem/11399
+
+```c++
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,3 +23,11 @@ int main() {
 
     cout << real_sum << endl;
 }
+
+
+```
+
+굉장히 간단한 그리디 문제
+
+
+
