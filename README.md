@@ -47,6 +47,7 @@
 | 2024/07/30 | [구두 수선공](https://www.acmicpc.net/problem/14908)                                  |
 | 2024/07/31 | [200% Mixed Juice!](https://www.acmicpc.net/problem/25312)                       |
 | 2024/08/01 | [ATM](https://www.acmicpc.net/problem/11399)                                     |
+|            | [회의실 배정](https://www.acmicpc.net/problem/1931)                                   |
 | 2024/07/30 |                                                                                  |
 | 2024/07/30 |                                                                                  |
 | 2024/07/30 |                                                                                  |
