@@ -48,4 +48,5 @@
 | 2024/07/31 | [200% Mixed Juice!](https://www.acmicpc.net/problem/25312)                       |
 | 2024/08/01 | [ATM](https://www.acmicpc.net/problem/11399)                                     |
 |            | [회의실 배정](https://www.acmicpc.net/problem/1931)                                   |
-| 2024/08/02 | [부녀회장이 될테야](https://www.acmicpc.net/problem/2775)                                                                    |
+| 2024/08/02 | [부녀회장이 될테야](https://www.acmicpc.net/problem/2775)                                |
+| 2024/08/03 | [행렬](https://www.acmicpc.net/problem/1080)                                       |
