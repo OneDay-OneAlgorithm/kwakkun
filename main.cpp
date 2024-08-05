@@ -1,38 +1,16 @@
-// 양동이 게임
-// https://www.acmicpc.net/problem/28360
 #include <bits/stdc++.h>
 
 using namespace std;
 
 int main() {
-    int N, M;
-    cin >> N >> M;
-    int v, w;
-
-    vector<vector<double>> adj(N + 1);
-    map<int, double> water;
-
-    water[1] = 100.0;
-    for (int i = 0; i < M; i++) {
-        cin >> v >> w;
-        adj[v].push_back(w * 1.0);
+    int n;
+    cin >> n;
+    int counter = 0;
+    n = 1000 - n;
+    int arr[] = {500, 100, 50, 10, 5, 1};
+    for (int i = 0; i < 6; i++) {
+        counter += n / arr[i];
+        n %= arr[i];
     }
-
-    for (int i = 1; i <= N; i++) {
-        for (int j = 0; j < adj[i].size(); j++) {
-            water[adj[i][j]] += water[i] / (double) adj[i].size();
-        }
-        if (!adj[i].empty()) {
-            water[i] = 0;
-        }
-    }
-
-    // find max value of map
-    double max = 0;
-    for (auto it = water.begin(); it != water.end(); it++) {
-        if (it->second > max) {
-            max = it->second;
-        }
-    }
-    cout << max << endl;
+    cout << counter << endl;
 }

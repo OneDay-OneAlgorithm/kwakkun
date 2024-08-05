@@ -51,3 +51,4 @@
 | 2024/08/02 | [부녀회장이 될테야](https://www.acmicpc.net/problem/2775)                                |
 | 2024/08/03 | [행렬](https://www.acmicpc.net/problem/1080)                                       |
 | 2024/08/04 | [양동이 게임](https://www.acmicpc.net/problem/28360)                                  |
+| 2024/08/05 | [거스름돈](https://www.acmicpc.net/problem/5585)                                    |
