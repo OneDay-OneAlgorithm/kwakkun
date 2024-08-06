@@ -4,6 +4,8 @@
 
 => 목표 : 2023 SCCC 여름 초급 강의 필수 과제 완료하기
 
+## 2024년 7월
+
 | 날짜         | 문제                                                                               |
 |------------|----------------------------------------------------------------------------------|
 | 2024/07/01 | [동전0](https://www.acmicpc.net/problem/11047)                                     | 
@@ -46,9 +48,15 @@
 |            | [본대 산책 3](https://www.acmicpc.net/problem/14289)                                 |
 | 2024/07/30 | [구두 수선공](https://www.acmicpc.net/problem/14908)                                  |
 | 2024/07/31 | [200% Mixed Juice!](https://www.acmicpc.net/problem/25312)                       |
-| 2024/08/01 | [ATM](https://www.acmicpc.net/problem/11399)                                     |
-|            | [회의실 배정](https://www.acmicpc.net/problem/1931)                                   |
-| 2024/08/02 | [부녀회장이 될테야](https://www.acmicpc.net/problem/2775)                                |
-| 2024/08/03 | [행렬](https://www.acmicpc.net/problem/1080)                                       |
-| 2024/08/04 | [양동이 게임](https://www.acmicpc.net/problem/28360)                                  |
-| 2024/08/05 | [거스름돈](https://www.acmicpc.net/problem/5585)                                    |
+
+## 2024년 8월
+
+| 날짜         | 문제                                                |
+|------------|---------------------------------------------------|
+| 2024/08/01 | [ATM](https://www.acmicpc.net/problem/11399)      |
+|            | [회의실 배정](https://www.acmicpc.net/problem/1931)    |
+| 2024/08/02 | [부녀회장이 될테야](https://www.acmicpc.net/problem/2775) |
+| 2024/08/03 | [행렬](https://www.acmicpc.net/problem/1080)        |
+| 2024/08/04 | [양동이 게임](https://www.acmicpc.net/problem/28360)   |
+| 2024/08/05 | [거스름돈](https://www.acmicpc.net/problem/5585)      |
+| 2024/08/06 | [선수과목](https://www.acmicpc.net/problem/14567)     |
