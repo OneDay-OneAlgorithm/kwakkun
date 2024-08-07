@@ -60,3 +60,4 @@
 | 2024/08/04 | [양동이 게임](https://www.acmicpc.net/problem/28360)   |
 | 2024/08/05 | [거스름돈](https://www.acmicpc.net/problem/5585)      |
 | 2024/08/06 | [선수과목](https://www.acmicpc.net/problem/14567)     |
+| 2024/08/07 | [비트가 넘쳐흘러](https://www.acmicpc.net/problem/17419) |

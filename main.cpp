@@ -1,53 +1,18 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-typedef vector<vector<int>> Graph;
-
-int N, M;
-
-void KahnSort(const Graph &graph) {
-    vector<int> in_degree(N + 1, 0); // 각 정점의 진입 차수를 저장할 벡터 초기화
-    map<int, int> top_order_map; // 위상 정렬 결과를 저장할 map 초기화
-
-    // 각 정점의 진입 차수를 계산
-    for (int u = 1; u <= N; u++) {
-        for (int v: graph[u]) {
-            in_degree[v]++; // 간선 (u, v)에 대해 v의 진입 차수 증가
-        }
-    }
-
-    queue<int> q; // 진입 차수가 0인 정점을 저장할 큐 초기화
-    for (int i = 1; i <= N; i++) {
-        if (in_degree[i] == 0) { // 진입 차수가 0인 정점을 큐에 추가
-            q.push(i);
-            top_order_map[i] = 1;
-        }
-    }
-
-    while (!q.empty()) { // 큐가 빌 때까지 반복
-        int u = q.front(); // 큐의 앞에 있는 정점을 가져옴
-        q.pop(); // 큐에서 해당 정점을 제거
-
-        for (int v: graph[u]) { // 정점 u와 연결된 모든 정점 v에 대해
-            if (--in_degree[v] == 0) { // v의 진입 차수를 감소시키고, 0이 되면
-                q.push(v); // 큐에 추가
-                top_order_map[v] = top_order_map[u] + 1; // 결과 map에 해당 정점을 추가
-            }
-        }
-    }
-
-    for (int i = 1; i < N + 1; i++) {
-        cout << top_order_map[i] << " ";
-    }
-}
 
 int main() {
-    cin >> N >> M;
-    Graph graph(N + 1);
-    for (int i = 0; i < M; ++i) {
-        int a, b;
-        cin >> a >> b;
-        graph[a].push_back(b);
+    int n;
+    int counter = 0;
+    cin >> n;
+    string s;
+    cin >> s;
+    for (char i : s) {
+        if (i == '1') {
+            counter++;
+        }
     }
-    KahnSort(graph);
+
+    cout << counter << endl;
 }
