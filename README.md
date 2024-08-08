@@ -61,3 +61,4 @@
 | 2024/08/05 | [거스름돈](https://www.acmicpc.net/problem/5585)      |
 | 2024/08/06 | [선수과목](https://www.acmicpc.net/problem/14567)     |
 | 2024/08/07 | [비트가 넘쳐흘러](https://www.acmicpc.net/problem/17419) |
+| 2024/08/08 | [다리 놓기](https://www.acmicpc.net/problem/1010)     |
