@@ -63,3 +63,4 @@
 | 2024/08/07 | [비트가 넘쳐흘러](https://www.acmicpc.net/problem/17419) |
 | 2024/08/08 | [다리 놓기](https://www.acmicpc.net/problem/1010)     |
 | 2024/08/09 | [트리와 쿼리](https://www.acmicpc.net/problem/15681)   |
+| 2024/08/10 | [가운데를 말해요](https://www.acmicpc.net/problem/1655)  |
