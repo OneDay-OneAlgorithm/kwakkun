@@ -64,3 +64,4 @@
 | 2024/08/08 | [다리 놓기](https://www.acmicpc.net/problem/1010)     |
 | 2024/08/09 | [트리와 쿼리](https://www.acmicpc.net/problem/15681)   |
 | 2024/08/10 | [가운데를 말해요](https://www.acmicpc.net/problem/1655)  |
+| 2024/08/11 | [우수 마을](https://www.acmicpc.net/problem/1949)     |
