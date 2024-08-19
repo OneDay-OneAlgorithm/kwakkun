@@ -1,66 +1,49 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+typedef long long ll;
 
-class CustomStack {
-public:
-    vector<int> stack;
-
-    void push(int x) {
-        stack.push_back(x);
-    }
-
-    int pop() {
-        if (stack.size() == 0) {
-            return -1;
-        }
-        int top = stack.back();
-        stack.pop_back();
-        return top;
-    }
-
-    int size() {
-        return stack.size();
-    }
-
-    int empty() {
-        return stack.size() == 0;
-    }
-
-    int top() {
-        if (stack.size() == 0) {
-            return -1;
-        }
-        return stack.back();
-    }
-
-};
+int N, M;
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
 
-    int N;
-    CustomStack stack;
-    cin >> N;
-    while (N--) {
-        string cmd;
-        cin >> cmd;
-        if (cmd == "push") {
-            int x;
-            cin >> x;
-            stack.push(x);
-        } else if (cmd == "pop") {
-            cout << stack.pop() << '\n';
-        } else if (cmd == "size") {
-            cout << stack.size() << '\n';
-        } else if (cmd == "empty") {
-            cout << stack.empty() << '\n';
-        } else if (cmd == "top") {
-            cout << stack.top() << '\n';
+    cin >> N >> M;
+
+    vector<ll> arr(N);
+    for (int i = 0; i < N; i++) {
+        cin >> arr[i];
+    }
+
+    ll left = 0;
+    ll right = *max_element(arr.begin(), arr.end());
+
+//    cout << right << endl;
+    int result = 0;
+
+    while (left <= right) {
+//        cout << left << " " << right << endl;
+
+        ll mid = (left + right) / 2;
+        ll cut_length = 0;
+
+        for (int i = 0; i < N; ++i) {
+            if (arr[i] > mid) {
+                cut_length += arr[i] - mid;
+            }
+        }
+
+        if (cut_length >= M) {
+            result = mid;
+            left = mid + 1;
+        } else {
+            right = mid - 1;
         }
     }
+
+    cout << result << "\n";
 
     return 0;
 }
