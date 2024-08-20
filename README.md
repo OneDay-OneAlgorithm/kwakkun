@@ -74,3 +74,4 @@
 | 2024/08/18 | 안함...                                             |
 | 2024/08/19 | [스택](https://www.acmicpc.net/problem/10828)       |
 |            | [나무 자르기](https://www.acmicpc.net/problem/2805)    |
+| 2024/08/20 | [가운데를 말해요](https://www.acmicpc.net/problem/1655)  |
