@@ -79,3 +79,4 @@
 | 2024/08/21 | [구간 합 구하기 4](https://www.acmicpc.net/problem/11659)          |
 | 2024/08/22 | [1로 만들기](https://www.acmicpc.net/problem/1463)               |
 | 2024/08/23 | [가장 가까운 세 사람의 심리적 거리](https://www.acmicpc.net/problem/20529) |
+| 2024/08/23 | [암호 만들기](https://www.acmicpc.net/problem/21553)              |
