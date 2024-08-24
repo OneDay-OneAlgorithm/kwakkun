@@ -51,32 +51,33 @@
 
 ## 2024년 8월
 
-| 날짜         | 문제                                                           |
-|------------|--------------------------------------------------------------|
-| 2024/08/01 | [ATM](https://www.acmicpc.net/problem/11399)                 |
-|            | [회의실 배정](https://www.acmicpc.net/problem/1931)               |
-| 2024/08/02 | [부녀회장이 될테야](https://www.acmicpc.net/problem/2775)            |
-| 2024/08/03 | [행렬](https://www.acmicpc.net/problem/1080)                   |
-| 2024/08/04 | [양동이 게임](https://www.acmicpc.net/problem/28360)              |
-| 2024/08/05 | [거스름돈](https://www.acmicpc.net/problem/5585)                 |
-| 2024/08/06 | [선수과목](https://www.acmicpc.net/problem/14567)                |
-| 2024/08/07 | [비트가 넘쳐흘러](https://www.acmicpc.net/problem/17419)            |
-| 2024/08/08 | [다리 놓기](https://www.acmicpc.net/problem/1010)                |
-| 2024/08/09 | [트리와 쿼리](https://www.acmicpc.net/problem/15681)              |
-| 2024/08/10 | [가운데를 말해요](https://www.acmicpc.net/problem/1655)             |
-| 2024/08/11 | [우수 마을](https://www.acmicpc.net/problem/1949)                |
-| 2024/08/12 | 홋카이도 여행~~                                                    |
-| 2024/08/13 | 홋카이도 여행~~                                                    |
-| 2024/08/14 | 홋카이도 여행~~                                                    |
-| 2024/08/15 | 홋카이도 여행~~                                                    |
-| 2024/08/16 | [단어 정렬](https://www.acmicpc.net/problem/1181)                |
-| 2024/08/17 | 계곡 여행~                                                       |
-| 2024/08/18 | 안함...                                                        |
-| 2024/08/19 | [스택](https://www.acmicpc.net/problem/10828)                  |
-|            | [나무 자르기](https://www.acmicpc.net/problem/2805)               |
-| 2024/08/20 | [가운데를 말해요](https://www.acmicpc.net/problem/1655)             |
-|            | [소수 구하기](https://www.acmicpc.net/problem/1929)               |
-| 2024/08/21 | [구간 합 구하기 4](https://www.acmicpc.net/problem/11659)          |
-| 2024/08/22 | [1로 만들기](https://www.acmicpc.net/problem/1463)               |
+| 날짜         | 문제                      |
+|------------|-------------------------|
+| 2024/08/01 | [ATM](https://www.acmicpc.net/problem/11399) |
+|            | [회의실 배정](https://www.acmicpc.net/problem/1931) |
+| 2024/08/02 | [부녀회장이 될테야](https://www.acmicpc.net/problem/2775) |
+| 2024/08/03 | [행렬](https://www.acmicpc.net/problem/1080) |
+| 2024/08/04 | [양동이 게임](https://www.acmicpc.net/problem/28360) |
+| 2024/08/05 | [거스름돈](https://www.acmicpc.net/problem/5585) |
+| 2024/08/06 | [선수과목](https://www.acmicpc.net/problem/14567) |
+| 2024/08/07 | [비트가 넘쳐흘러](https://www.acmicpc.net/problem/17419) |
+| 2024/08/08 | [다리 놓기](https://www.acmicpc.net/problem/1010) |
+| 2024/08/09 | [트리와 쿼리](https://www.acmicpc.net/problem/15681) |
+| 2024/08/10 | [가운데를 말해요](https://www.acmicpc.net/problem/1655) |
+| 2024/08/11 | [우수 마을](https://www.acmicpc.net/problem/1949) |
+| 2024/08/12 | 홋카이도 여행~~               |
+| 2024/08/13 | 홋카이도 여행~~               |
+| 2024/08/14 | 홋카이도 여행~~               |
+| 2024/08/15 | 홋카이도 여행~~               |
+| 2024/08/16 | [단어 정렬](https://www.acmicpc.net/problem/1181) |
+| 2024/08/17 | 계곡 여행~                  |
+| 2024/08/18 | 안함...                   |
+| 2024/08/19 | [스택](https://www.acmicpc.net/problem/10828) |
+|            | [나무 자르기](https://www.acmicpc.net/problem/2805) |
+| 2024/08/20 | [가운데를 말해요](https://www.acmicpc.net/problem/1655) |
+|            | [소수 구하기](https://www.acmicpc.net/problem/1929) |
+| 2024/08/21 | [구간 합 구하기 4](https://www.acmicpc.net/problem/11659) |
+| 2024/08/22 | [1로 만들기](https://www.acmicpc.net/problem/1463) |
 | 2024/08/23 | [가장 가까운 세 사람의 심리적 거리](https://www.acmicpc.net/problem/20529) |
-| 2024/08/23 | [암호 만들기](https://www.acmicpc.net/problem/21553)              |
+| 2024/08/23 | [암호 만들기](https://www.acmicpc.net/problem/21553) |
+| 2024/08/24 | [N과 M (1)](https://www.acmicpc.net/problem/15649)              |
