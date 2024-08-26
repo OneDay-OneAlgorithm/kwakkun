@@ -82,3 +82,4 @@
 | 2024/08/23 | [암호 만들기](https://www.acmicpc.net/problem/21553)              |
 | 2024/08/24 | [N과 M (1)](https://www.acmicpc.net/problem/15649)            |
 | 2024/08/25 | [팰린드롬](https://www.acmicpc.net/problem/5502)                 |
+| 2024/08/26 | [대소문자 바꾸기](https://www.acmicpc.net/problem/2744)             |
