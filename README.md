@@ -85,3 +85,5 @@
 | 2024/08/26 | [대소문자 바꾸기](https://www.acmicpc.net/problem/2744)             |
 | 2024/08/27 | [최대 힙](https://www.acmicpc.net/problem/11279)                |
 | 2024/08/28 | [논리학 교수](https://www.acmicpc.net/problem/1813)               |
+| 2024/08/29 | 송도 여행~                                                       |
+| 2024/08/30 | [수들의 합 5](https://www.acmicpc.net/problem/2018)              |
