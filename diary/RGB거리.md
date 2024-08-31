@@ -1,3 +1,10 @@
+---
+DONE_DATE: 2024/08/31
+---
+
+https://www.acmicpc.net/problem/1149
+
+```c++
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -28,3 +35,10 @@ int main() {
 
     return 0;
 }
+```
+
+dp문제.
+예전에 한번 풀어본 적이 있는 문제라 수월했다.
+어느덧 마지막이네?
+
+
