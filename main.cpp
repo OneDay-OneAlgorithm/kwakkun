@@ -1,27 +1,55 @@
 #include <bits/stdc++.h>
 
-#define ll long long
 using namespace std;
+typedef vector<vector<int>> Graph;
 
 int main() {
-    int n;
-    cin >> n;
-    vector<pair<string, int>> a(n);
-    for (int i = 0; i < n; i++) {
-        cin >> a[i].first >> a[i].second;
+    Graph g;
+    int n, m;
+    int a, b;
+    cin >> n >> m;
+
+    g.resize(n + 1);
+
+    for (int i = 0; i < m; i++) {
+        cin >> a >> b;
+        g[a].push_back(b);
     }
 
-    int max_pig_v = 0;
-    for (auto x: a) {
-        if (x.first == "pig") max_pig_v = max(max_pig_v, x.second);
-    }
+    vector<int> inDegree(g.size());
+    priority_queue<int, vector<int>, greater<> > pq;
+    vector<int> result;
 
-    ll result = 0;
-    for(auto x : a) {
-        if (x.first != "pig" && x.second < max_pig_v) {
-            result += x.second;
+    for (auto row: g) {
+        for (auto i: row) {
+            inDegree[i]++;
         }
     }
 
-    cout << result + max_pig_v << endl;
+    for (int i = 1; i < inDegree.size(); i++) {
+        if (inDegree[i] == 0) {
+            pq.push(i);
+        }
+    }
+
+    while (!pq.empty()) {
+        int i = pq.top();
+//        cout << "top : " << i << endl;
+        result.push_back(i);
+        pq.pop();
+        for (auto j: g[i]) {
+            inDegree[j]--;
+            if (inDegree[j] == 0) {
+                pq.push(j);
+            }
+        }
+    }
+
+    if(result.size() != n) {
+        cout << "IMPOSSIBLE";
+    } else {
+        for (auto i : result) {
+            cout << i << " ";
+        }
+    }
 }

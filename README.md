@@ -96,9 +96,9 @@
 | 2024/09/06 | [영단어 암기는 괴로워](https://www.acmicpc.net/problem/20920)              |
 | 2024/09/28 | [Attention to the Meeting](https://www.acmicpc.net/problem/32432) |
 
-
 ## 2024년 10월
 
-| 날짜         | 문제                                                   |
-|------------|------------------------------------------------------|
-| 2024/10/09 | [Animal Farm](https://www.acmicpc.net/problem/32449) |
+| 날짜         | 문제                                                                 |
+|------------|--------------------------------------------------------------------|
+| 2024/10/08 | [Animal Farm](https://www.acmicpc.net/problem/32449)               |
+| 2024/10/09 | [Kingdoms Development Plan](https://www.acmicpc.net/problem/32459) |
