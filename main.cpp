@@ -1,55 +1,30 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-typedef vector<vector<int>> Graph;
+int pSum[1025][1025] = {0,};
 
 int main() {
-    Graph g;
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
     int n, m;
-    int a, b;
     cin >> n >> m;
-
-    g.resize(n + 1);
-
-    for (int i = 0; i < m; i++) {
-        cin >> a >> b;
-        g[a].push_back(b);
-    }
-
-    vector<int> inDegree(g.size());
-    priority_queue<int, vector<int>, greater<> > pq;
-    vector<int> result;
-
-    for (auto row: g) {
-        for (auto i: row) {
-            inDegree[i]++;
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= n; ++j) {
+            int input;
+            cin >> input;
+            pSum[i][j] = pSum[i][j - 1] + input;
         }
-    }
-
-    for (int i = 1; i < inDegree.size(); i++) {
-        if (inDegree[i] == 0) {
-            pq.push(i);
-        }
-    }
-
-    while (!pq.empty()) {
-        int i = pq.top();
-//        cout << "top : " << i << endl;
-        result.push_back(i);
-        pq.pop();
-        for (auto j: g[i]) {
-            inDegree[j]--;
-            if (inDegree[j] == 0) {
-                pq.push(j);
+        if (i != 1) {
+            for (int j = 1; j <= n; ++j) {
+                pSum[i][j] += pSum[i - 1][j];
             }
         }
     }
 
-    if(result.size() != n) {
-        cout << "IMPOSSIBLE";
-    } else {
-        for (auto i : result) {
-            cout << i << " ";
-        }
+    for (int i = 0; i < m; ++i) {
+        int x1, y1, x2, y2;
+        cin >> x1 >> y1 >> x2 >> y2;
+        cout << pSum[x2][y2] - pSum[x1 - 1][y2] - pSum[x2][y1 - 1] + pSum[x1 - 1][y1 - 1] << "\n";
     }
 }

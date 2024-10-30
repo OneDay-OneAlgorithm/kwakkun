@@ -102,3 +102,4 @@
 |------------|--------------------------------------------------------------------|
 | 2024/10/08 | [Animal Farm](https://www.acmicpc.net/problem/32449)               |
 | 2024/10/09 | [Kingdoms Development Plan](https://www.acmicpc.net/problem/32459) |
+| 2024/10/30 | [구간 합 구하기 5](https://www.acmicpc.net/problem/11660)                |
