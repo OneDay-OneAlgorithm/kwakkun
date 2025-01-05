@@ -103,3 +103,11 @@
 | 2024/10/08 | [Animal Farm](https://www.acmicpc.net/problem/32449)               |
 | 2024/10/09 | [Kingdoms Development Plan](https://www.acmicpc.net/problem/32459) |
 | 2024/10/30 | [구간 합 구하기 5](https://www.acmicpc.net/problem/11660)                |
+
+## 2025년 1월
+
+| 날짜         | 문제                                                   |
+|------------|------------------------------------------------------|
+| 2025/01/04 | [이항계수2](https://www.acmicpc.net/problem/11051)       |
+|            | [1,2,3 더하기 5](https://www.acmicpc.net/problem/15990) |
+| 2025/01/05 | [최소 스패닝 트리 ](https://www.acmicpc.net/problem/1197)   |

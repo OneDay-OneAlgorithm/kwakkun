@@ -1,33 +1,41 @@
 #include <bits/stdc++.h>
 
-typedef long long ll;
-#define MOD 10007
 using namespace std;
-
-ll binomial(int N, int K) {
-    int old_dp[N + 1];
-    int new_dp[N + 1];
-
-    old_dp[0] = 1;
-
-    for (int i = 0; i <= N; i++) {
-        for (int j = 0; j <= i; j++) {
-            if (j == 0 || i == j) {
-                new_dp[j] = 1;
-            } else {
-                new_dp[j] = (old_dp[j] + old_dp[j - 1]) % MOD;
-            }
-        }
-
-        for (int j = 0; j <= N + 1; j++) {
-            old_dp[j] = new_dp[j];
-        }
-    }
-    return new_dp[K];
-}
+typedef pair<int, int> pii;
 
 int main() {
-    int N, K;
-    cin >> N >> K;
-    cout << binomial(N, K);
+    int V, E;
+    cin >> V >> E;
+    vector<vector<pii>> graph(V + 1);
+
+    for (int i = 0; i < E; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        graph[u].emplace_back(v, w);
+        graph[v].emplace_back(u, w);
+    }
+
+    vector<bool> visited(V + 1, false);
+    priority_queue<pii, vector<pii>, greater<>> pq;
+
+    int start = 1;
+    pq.emplace(0, start);
+    int total_weight = 0;
+
+    while (!pq.empty()) {
+        auto [w, u] = pq.top();
+        pq.pop();
+
+        if (visited[u]) continue;
+        visited[u] = true;
+        total_weight += w;
+
+        for (auto [v, w]: graph[u]) {
+            if (!visited[v]) {
+                pq.emplace(w, v);
+            }
+        }
+    }
+
+    cout << total_weight;
 }
