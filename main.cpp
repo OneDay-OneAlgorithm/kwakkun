@@ -1,30 +1,33 @@
 #include <bits/stdc++.h>
 
+typedef long long ll;
+#define MOD 10007
 using namespace std;
-int pSum[1025][1025] = {0,};
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    int n, m;
-    cin >> n >> m;
-    for (int i = 1; i <= n; ++i) {
-        for (int j = 1; j <= n; ++j) {
-            int input;
-            cin >> input;
-            pSum[i][j] = pSum[i][j - 1] + input;
-        }
-        if (i != 1) {
-            for (int j = 1; j <= n; ++j) {
-                pSum[i][j] += pSum[i - 1][j];
+ll binomial(int N, int K) {
+    int old_dp[N + 1];
+    int new_dp[N + 1];
+
+    old_dp[0] = 1;
+
+    for (int i = 0; i <= N; i++) {
+        for (int j = 0; j <= i; j++) {
+            if (j == 0 || i == j) {
+                new_dp[j] = 1;
+            } else {
+                new_dp[j] = (old_dp[j] + old_dp[j - 1]) % MOD;
             }
         }
-    }
 
-    for (int i = 0; i < m; ++i) {
-        int x1, y1, x2, y2;
-        cin >> x1 >> y1 >> x2 >> y2;
-        cout << pSum[x2][y2] - pSum[x1 - 1][y2] - pSum[x2][y1 - 1] + pSum[x1 - 1][y1 - 1] << "\n";
+        for (int j = 0; j <= N + 1; j++) {
+            old_dp[j] = new_dp[j];
+        }
     }
+    return new_dp[K];
+}
+
+int main() {
+    int N, K;
+    cin >> N >> K;
+    cout << binomial(N, K);
 }
