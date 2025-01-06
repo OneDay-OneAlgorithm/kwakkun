@@ -1,41 +1,40 @@
 #include <bits/stdc++.h>
 
+#define DIV 1000000007
+typedef long long ll;
 using namespace std;
-typedef pair<int, int> pii;
+
+ll fact(int n) {
+    ll res = 1;
+    for (int i = 1; i <= n; i++) {
+        res = (res * i) % DIV;
+    }
+    return res;
+}
+
+ll fast_pow(ll a, ll b) {
+    ll res = 1;
+    while (b > 0) {
+        if (b % 2 == 1) {
+            res = (res * a) % DIV;
+        }
+        a = (a * a) % DIV;
+        b /= 2;
+    }
+    return res;
+}
+
+ll binomial(int n, int k) {
+    if ((k > n) || (k < 0)) return 0;
+
+    ll res = fact(n);
+    res = (res * fast_pow(fact(k), DIV - 2)) % DIV;
+    res = (res * fast_pow(fact(n - k), DIV - 2)) % DIV;
+    return res;
+}
 
 int main() {
-    int V, E;
-    cin >> V >> E;
-    vector<vector<pii>> graph(V + 1);
-
-    for (int i = 0; i < E; i++) {
-        int u, v, w;
-        cin >> u >> v >> w;
-        graph[u].emplace_back(v, w);
-        graph[v].emplace_back(u, w);
-    }
-
-    vector<bool> visited(V + 1, false);
-    priority_queue<pii, vector<pii>, greater<>> pq;
-
-    int start = 1;
-    pq.emplace(0, start);
-    int total_weight = 0;
-
-    while (!pq.empty()) {
-        auto [w, u] = pq.top();
-        pq.pop();
-
-        if (visited[u]) continue;
-        visited[u] = true;
-        total_weight += w;
-
-        for (auto [v, w]: graph[u]) {
-            if (!visited[v]) {
-                pq.emplace(w, v);
-            }
-        }
-    }
-
-    cout << total_weight;
+    int n, k;
+    cin >> n >> k;
+    cout << binomial(n, k) << endl;
 }

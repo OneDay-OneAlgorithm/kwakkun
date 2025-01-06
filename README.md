@@ -111,3 +111,4 @@
 | 2025/01/04 | [이항계수2](https://www.acmicpc.net/problem/11051)       |
 |            | [1,2,3 더하기 5](https://www.acmicpc.net/problem/15990) |
 | 2025/01/05 | [최소 스패닝 트리 ](https://www.acmicpc.net/problem/1197)   |
+| 2025/01/06 | [이항 계수 3 ](https://www.acmicpc.net/problem/11401)    |
