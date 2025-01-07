@@ -4,6 +4,10 @@ DONE_DATE: 2024/10/09
 
 # Animal Farm
 
+## 난이도
+
+- 골드 5
+
 ## 문제
 
 https://www.acmicpc.net/problem/32449
