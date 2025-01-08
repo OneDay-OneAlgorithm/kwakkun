@@ -1,71 +1,50 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+typedef pair<int, int> WeightEdge; // first: weight, second: vertex
+typedef vector<vector<WeightEdge>> Graph;
 
-unordered_map<int, int> ladder;
-unordered_map<int, int> snakes;
+Graph graph;
 
-int bfs() {
-    queue<int> q;
-    int depth[101];
-    bool visited[101] = {false};
-    fill_n(depth, 101, INT_MAX);
+int prim() {
+    int startVertex = 1;
+    priority_queue<WeightEdge, vector<WeightEdge>, greater<>> pq;
+    vector<bool> visited(graph.size(), false);
 
-    q.push(1);
-    depth[1] = 0;
-    visited[1] = true;
+    pq.emplace(0, startVertex);
 
-    while (!q.empty()) {
-        int u = q.front();
-        q.pop();
-        for (int i = 1; i <= 6; i++) {
-            int v = u + i;
+    int totalWeight = 0;
+    while (!pq.empty()) {
+        int w = pq.top().first;
+        int u = pq.top().second;
+        pq.pop();
 
-            // 100칸 넘어가면 이동 X
-            if (v > 100) {
-                continue;
-            }
+        if (visited[u]) continue;
+        visited[u] = true;
+        totalWeight += w;
 
-            // 사다리 혹은 뱀이면 이동
-            if (ladder.find(v) != ladder.end()) {
-                v = ladder[v];
-            } else if (snakes.find(v) != snakes.end()) {
-                v = snakes[v];
-            }
-
-            // 이미 방문한 칸이면 이동 X
-            if (visited[v]) {
-                continue;
-            }
-
-            // 방문한 칸이 아니면 이동
-            q.push(v);
-            depth[v] = min(depth[v], depth[u] + 1);
-            visited[v] = true;
-
-            // 100칸에 도착하면 종료
-            if (v == 100) {
-                return depth[v];
+        for (auto &edge: graph[u]) {
+            int weight = edge.first; // weight
+            int v = edge.second; // vertex
+            if (!visited[v]) {
+                pq.emplace(weight, v);
             }
         }
     }
-    return -1;
+
+    return totalWeight;
 }
 
 int main() {
-    int N, M;
-    cin >> N >> M;
-    for (int i = 0; i < N; i++) {
-        int x, y;
-        cin >> x >> y;
-        ladder.emplace(x, y);
+    int V, E;
+    cin >> V >> E;
+    graph.resize(V + 1);
+    for (int i = 0; i < E; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        graph[u].emplace_back(w, v);
+        graph[v].emplace_back(w, u);
     }
 
-    for (int i = 0; i < M; i++) {
-        int u, v;
-        cin >> u >> v;
-        snakes.emplace(u, v);
-    }
-
-    cout << bfs() << endl;
+    cout << prim();
 }
