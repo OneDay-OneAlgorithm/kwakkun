@@ -2,82 +2,21 @@
 
 using namespace std;
 
-class UnionFind {
-private:
-    vector<int> parent;
-    vector<int> rank;
-public:
-    UnionFind(int n) {
-        parent.resize(n);
-        rank.resize(n, 0);
-        for (int i = 0; i < n; ++i) {
-            parent[i] = i; // 초기에는 자기 자신이 부모
+string remove(string &input, string &bomb) {
+    string result;
+    for (char i : input) {
+        result.push_back(i);
+        if (result.size() >= bomb.size() && result.substr(result.size() - bomb.size()) == bomb) {
+            result.erase(result.size() - bomb.size());
         }
     }
-
-    // Find 연산: x가 속한 집합의 대표자를 찾음 (경로 압축 적용)
-    int find(int x) {
-        if (parent[x] != x) {
-            parent[x] = find(parent[x]); // 경로 압축
-        }
-        return parent[x];
-    }
-
-    // Union 연산: 두 집합을 병합 (랭크 기반 병합)
-    void unite(int x, int y) {
-        int rootX = find(x);
-        int rootY = find(y);
-
-        if (rootX != rootY) {
-            if (rank[rootX] < rank[rootY]) {
-                parent[rootX] = rootY;
-            } else if (rank[rootX] > rank[rootY]) {
-                parent[rootY] = rootX;
-            } else {
-                parent[rootY] = rootX;
-                rank[rootX]++;
-            }
-        }
-    }
-
-    // 두 원소가 같은 집합에 속해 있는지 확인
-    bool connected(int x, int y) {
-        return find(x) == find(y);
-    }
-};
+    return result.empty() ? "FRULA" : result;
+}
 
 int main() {
-    int N;
-    cin >> N;
-    UnionFind uf(N + 1);
-
-    int M;
-    cin >> M;
-
-    bool connected;
-    for (int i = 1; i <= N; ++i) {
-        for (int j = 1; j <= N; ++j) {
-            cin >> connected;
-            if (connected) {
-                uf.unite(i, j);
-            }
-        }
-    }
-
-    int city;
-    cin >> city;
-    for (int i = 0; i < M - 1; ++i) {
-        int nextCity;
-        cin >> nextCity;
-        if (uf.connected(city, nextCity)) {
-            city = nextCity;
-        } else {
-            cout << "NO";
-            return 0;
-        }
-    }
-
-    cout << "YES";
-
-    return 0;
+    string input;
+    cin >> input;
+    string bomb;
+    cin >> bomb;
+    cout << remove(input, bomb);
 }
