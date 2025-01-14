@@ -2,21 +2,82 @@
 
 using namespace std;
 
-string remove(string &input, string &bomb) {
-    string result;
-    for (char i : input) {
-        result.push_back(i);
-        if (result.size() >= bomb.size() && result.substr(result.size() - bomb.size()) == bomb) {
-            result.erase(result.size() - bomb.size());
+class Node {
+public:
+    Node *children[10]{};
+    bool isEnd;
+
+    Node() {
+        for (auto &i: children) {
+            i = nullptr;
+        }
+        isEnd = false;
+    }
+
+    ~Node() {
+        for (auto &i: children) {
+            delete i;
         }
     }
-    return result.empty() ? "FRULA" : result;
-}
+};
+
+class Trie {
+public:
+    Node *root;
+
+    Trie() {
+        root = new Node();
+    }
+
+    ~Trie() {
+        delete root;
+    }
+
+    bool insert(string &s) const {
+        Node *cur = root;
+        for (char &c: s) {
+            int digit = c - '0';
+            if (cur->children[digit] == nullptr) {
+                cur->children[digit] = new Node();
+            }
+            if (cur->isEnd) {
+                return false;
+            }
+            cur = cur->children[digit];
+        }
+
+        for (auto & i : cur->children) {
+            if (i != nullptr) {
+                return false;
+            }
+        }
+
+        cur->isEnd = true;
+        return true;
+    }
+};
 
 int main() {
-    string input;
-    cin >> input;
-    string bomb;
-    cin >> bomb;
-    cout << remove(input, bomb);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<string> v(n);
+        for (string &s: v) {
+            cin >> s;
+        }
+        Trie trie;
+        bool ok = true;
+        for (string &s: v) {
+            if (!trie.insert(s)) {
+                ok = false;
+                break;
+            }
+        }
+        cout << (ok ? "YES" : "NO") << "\n";
+    }
 }
