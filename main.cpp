@@ -2,82 +2,63 @@
 
 using namespace std;
 
-class Node {
-public:
-    Node *children[10]{};
-    bool isEnd;
+#define INF 1e9
+typedef pair<int, int> Edge; // <weight, vertex>
+typedef vector<vector<Edge>> Graph;
 
-    Node() {
-        for (auto &i: children) {
-            i = nullptr;
-        }
-        isEnd = false;
-    }
+void dijkstra(int start, Graph &graph, vector<int> &dist, vector<int> &path) {
+    priority_queue<Edge, vector<Edge>, greater<>> pq;
+    pq.emplace(0, start);
+    dist[start] = 0;
 
-    ~Node() {
-        for (auto &i: children) {
-            delete i;
-        }
-    }
-};
+    while (!pq.empty()) {
+        auto [weight, vertex] = pq.top();
+        pq.pop();
 
-class Trie {
-public:
-    Node *root;
+        if (dist[vertex] < weight) continue; // 이미 더 짧은 경로로 방문한 적 있다면 무시
 
-    Trie() {
-        root = new Node();
-    }
-
-    ~Trie() {
-        delete root;
-    }
-
-    bool insert(string &s) const {
-        Node *cur = root;
-        for (char &c: s) {
-            int digit = c - '0';
-            if (cur->children[digit] == nullptr) {
-                cur->children[digit] = new Node();
-            }
-            if (cur->isEnd) {
-                return false;
-            }
-            cur = cur->children[digit];
-        }
-
-        for (auto & i : cur->children) {
-            if (i != nullptr) {
-                return false;
+        for (auto &neighbor: graph[vertex]) {
+            auto [w, v] = neighbor;
+            if (dist[v] > dist[vertex] + w) { // 새로운 경로가 기존보다 더 짧은 경우 갱신
+                dist[v] = dist[vertex] + w;
+                path[v] = vertex;
+                pq.emplace(dist[v], v);
             }
         }
-
-        cur->isEnd = true;
-        return true;
     }
-};
+}
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    int n, m;
+    cin >> n;
+    cin >> m;
+    Graph graph(n + 1);
 
-    int t;
-    cin >> t;
-    while (t--) {
-        int n;
-        cin >> n;
-        vector<string> v(n);
-        for (string &s: v) {
-            cin >> s;
-        }
-        Trie trie;
-        bool ok = true;
-        for (string &s: v) {
-            if (!trie.insert(s)) {
-                ok = false;
-                break;
-            }
-        }
-        cout << (ok ? "YES" : "NO") << "\n";
+    while (m--) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        graph[u].emplace_back(w, v);
+    }
+
+    vector<int> dist(n + 1, INF);
+    vector<int> path(n + 1, -1);
+
+    int start, end;
+    cin >> start >> end;
+    dijkstra(start, graph, dist, path);
+
+    cout << dist[end] << '\n';
+
+    vector<int> reverse_path;
+    for (int i = end; i != -1; i = path[i]) {
+        reverse_path.push_back(i);
+    }
+
+    reverse(reverse_path.begin(), reverse_path.end());
+
+    cout << reverse_path.size() << '\n';
+
+    for (auto i: reverse_path) {
+        cout << i << ' ';
     }
 }
