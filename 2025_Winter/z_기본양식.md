@@ -2,7 +2,7 @@
 DONE_DATE: 2025/00/00
 ---
 
-# Animal Farm
+# 타임머신
 
 ## 난이도
 
