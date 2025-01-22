@@ -1,42 +1,25 @@
 #include <bits/stdc++.h>
 
+typedef long long ll;
 using namespace std;
-typedef pair<int, int> Edge; /// weight, vertex
-typedef vector<vector<Edge>> Graph;
-
-// Prim
-int prim(Graph &graph, int S) {
-    vector<bool> visited(graph.size(), false);
-    priority_queue<Edge, vector<Edge>, greater<>> pq;
-    pq.emplace(0, S);
-    int total = 0;
-
-    while (!pq.empty()) {
-        auto [weight, u] = pq.top();
-        pq.pop();
-        if (visited[u]) continue;
-        visited[u] = true;
-        total += weight;
-        for (auto [w, v]: graph[u]) {
-            if (!visited[v]) {
-                pq.emplace(w, v);
-            }
-        }
-    }
-
-    return total;
-}
 
 int main() {
-    int N, M, S;
-    cin >> N >> M >> S;
-    Graph graph(N + 1);
-    while (M--) {
-        int u, v, w;
-        cin >> u >> v >> w;
-        graph[u].emplace_back(w, v);
-        graph[v].emplace_back(w, u);
+    int N, K;
+    cin >> N >> K;
+    vector<int> prefixSum(N + 1, 0);
+    unordered_map<ll, ll> map;
+    for (int i = 1; i <= N; i++) {
+        int num;
+        cin >> num;
+        prefixSum[i] = prefixSum[i - 1] + num;
     }
-
-    cout << prim(graph, S);
+    ll ans = 0;
+    for (int i = 1; i <= N; i++) {
+        if (prefixSum[i] == K) {
+            ans++;
+        }
+        ans += map[prefixSum[i] - K];
+        map[prefixSum[i]]++;
+    }
+    cout << ans;
 }
