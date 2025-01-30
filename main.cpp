@@ -1,50 +1,40 @@
 #include <bits/stdc++.h>
 
+typedef long long ll;
 using namespace std;
-typedef vector<vector<int>> Graph;
-
-void Kahn(Graph &G) {
-    vector<int> inDegree(G.size());
-    map<int, int> order;
-    for (int i = 1; i < G.size(); i++) {
-        for (int j: G[i]) {
-            inDegree[j]++;
-        }
-    }
-    queue<int> q;
-    for (int i = 1; i < G.size(); i++) {
-        if (inDegree[i] == 0) {
-            q.push(i);
-            order[i] = 1;
-        }
-    }
-
-    int depth = 1;
-    while (!q.empty()) {
-        int u = q.front();
-        q.pop();
-        for (int v: G[u]) {
-            inDegree[v]--;
-            if (inDegree[v] == 0) {
-                q.push(v);
-                order[v] = order[u] + 1;
-            }
-        }
-    }
-
-    for (auto p: order) {
-        cout << p.second << " ";
-    }
-}
 
 int main() {
-    int N, M;
-    cin >> N >> M;
-    Graph G(N + 1);
-    while (M--) {
-        int A, B;
-        cin >> A >> B;
-        G[A].push_back(B);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    ll min_val, max_val;
+    cin >> min_val >> max_val;
+    ll rangeSize = max_val - min_val + 1;
+
+    // 제곱수 배수 여부를 체크할 배열(각 인덱스는 해당 범위의 한 숫자에 대응)
+    vector<bool> isSquareMultiple(rangeSize, false);
+
+    // 2 이상 sqrt(max_val) 이하의 모든 i에 대해 i^2의 배수를 체크
+    for (ll i = 2; i * i <= max_val; i++) {
+        ll square = i * i;
+
+        // min_val 이상이면서 square로 나누어떨어지는 최소 시작값
+        ll start = ((min_val - 1) / square + 1) * square;
+
+        // start부터 max_val 이하까지 square씩 증가
+        for (ll j = start; j <= max_val; j += square) {
+            isSquareMultiple[j - min_val] = true;
+        }
     }
-    Kahn(G);
+
+    // 제곱수의 배수가 아닌(아직 false인) 인덱스 개수
+    ll result = 0;
+    for (ll i = 0; i < rangeSize; i++) {
+        if (!isSquareMultiple[i]) {
+            result++;
+        }
+    }
+
+    cout << result << "\n";
+    return 0;
 }
